@@ -177,6 +177,8 @@ var bulmaAccordion = function (_EventEmitter) {
   }, {
     key: onBulmaAccordionClick,
     value: function value(e) {
+      if (!e.currentTarget.classList.contains('toggle')) return;
+
       e.preventDefault();
 
       var target = e.currentTarget.closest('.accordion') || e.currentTarget;

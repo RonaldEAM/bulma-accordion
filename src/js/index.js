@@ -77,6 +77,9 @@ export default class bulmaAccordion extends EventEmitter {
    * @return {void}
    */
   [onBulmaAccordionClick](e) {
+    if (!e.currentTarget.classList.contains('toggle'))
+      return;
+
     e.preventDefault();
 
     const target = e.currentTarget.closest('.accordion') || e.currentTarget;
